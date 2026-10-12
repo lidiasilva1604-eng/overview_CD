@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Onboarding Ciência de dados</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--or:#EC7000;--or2:#FF8A1F;--bl:#003A70;--bl2:#5AA9E6;--bg:#0D1620;--card:#15212F;--card2:#1D2D40;--ln:#2B3C52;--tx:#F3F5F7;--mu:#9FAEBF;--r:14px;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(60px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100%}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--bl2);outline-offset:2px}
+#cb{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--or);color:var(--bl);padding:9px 16px;display:flex;align-items:center;gap:12px}
+.cbl{font-size:12px;font-weight:900;white-space:nowrap}
+.cbd{font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1;white-space:nowrap}
+.pt{flex:1;height:7px;background:rgba(0,58,112,.25);border-radius:99px;overflow:hidden}
+.pf{height:100%;width:0;background:var(--bl);border-radius:99px;transition:width .6s}
+.hero{background:linear-gradient(160deg,#10263D,#0D1620 70%);border-bottom:3px solid var(--or);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 18px,rgba(255,255,255,.03) 18px 20px);pointer-events:none}
+.hi{position:relative;max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;padding:30px 20px 22px;text-align:center}
+.logo{width:76px;height:76px;border-radius:20px;background:var(--or);color:var(--bl);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:44px;letter-spacing:1px;box-shadow:0 6px 22px rgba(236,112,0,.45);margin-bottom:14px}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(34px,9vw,52px);letter-spacing:2px;line-height:1}
+h1 em{font-style:normal;color:var(--or2)}
+.hsub{color:var(--mu);font-size:14px;margin-top:8px}
+.hs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}
+.hst{background:rgba(13,22,32,.8);border:1px solid var(--ln);border-radius:10px;padding:8px 16px;font-size:12px;font-weight:800;color:var(--mu)}
+.hst b{display:block;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:24px;color:#fff;line-height:1}
+.hst:last-child b{color:var(--or2)}
+.tabs{display:flex;justify-content:center;gap:6px;padding:14px 16px;background:var(--card);border-bottom:1px solid var(--ln)}
+.tabs button{border:1.5px solid var(--ln);background:transparent;color:var(--mu);font-weight:800;font-size:13px;padding:9px 16px;border-radius:10px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--or);border-color:var(--or);color:var(--bl)}
+.w{max-width:900px;margin:0 auto}
+.sl{padding:18px 16px 8px;font-size:11px;font-weight:800;color:var(--mu);text-transform:uppercase;letter-spacing:1.5px}
+.sg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:0 16px 16px}
+@media(min-width:520px){.sg{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:800px){.sg{grid-template-columns:repeat(5,1fr)}}
+.sb{background:var(--card);border:2px solid var(--ln);border-radius:var(--r);padding:14px 10px;cursor:pointer;text-align:center;color:var(--tx);position:relative;transition:transform .15s,border-color .15s}
+.sb:hover{transform:translateY(-2px);border-color:var(--bl2)}
+.sb.active{border-color:var(--or);box-shadow:0 0 0 3px rgba(236,112,0,.25)}
+.se{font-size:24px}.sn{font-size:10px;font-weight:800;color:var(--or2);text-transform:uppercase;margin-top:4px}
+.snm{font-size:12px;font-weight:800;line-height:1.2;margin:3px 0 8px}
+.mini{height:4px;background:var(--ln);border-radius:9px;overflow:hidden}.mini i{display:block;height:100%;background:var(--or);width:0}
+.sb.full{border-color:var(--bl2)}.sb.full .mini i{background:var(--bl2)}
+.sd{position:absolute;top:7px;right:9px;font-size:11px;font-weight:900;color:var(--mu)}
+#det{padding:0 16px 32px}
+.shdr{background:var(--card);border-left:5px solid var(--or);border-radius:var(--r);padding:18px;margin-bottom:12px}
+.stag{font-size:10px;font-weight:800;color:var(--or2);text-transform:uppercase;letter-spacing:1px}
+.shdr h2{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:28px;letter-spacing:1px;margin-top:3px}
+.sbadge{display:inline-block;background:rgba(90,169,230,.14);border:1px solid rgba(90,169,230,.35);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:800;color:var(--bl2);margin-top:8px}
+.tc{background:var(--card);border:1px solid var(--ln);border-radius:var(--r);margin-bottom:10px;overflow:hidden}
+.th{display:flex;gap:12px;align-items:center;padding:14px 16px}
+.nb{width:34px;height:34px;border-radius:10px;background:rgba(236,112,0,.15);border:2px solid var(--or);color:var(--or2);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:18px;flex:none}
+.th h3{font-size:15px;font-weight:800;line-height:1.3}
+.tc.ok .nb{background:var(--bl2);border-color:var(--bl2);color:var(--bl)}
+.tc.ok h3{color:var(--mu)}
+.vl{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 12px}
+.vi{display:flex;align-items:center;gap:8px;background:var(--card2);border:1px solid var(--ln);border-radius:10px;padding:7px 12px 7px 8px;text-decoration:none;color:var(--tx);font-size:12px;font-weight:800;transition:background .15s}
+.vi:hover{background:#273b54}
+.vt{width:26px;height:26px;border-radius:7px;background:rgba(236,112,0,.18);color:var(--or2);display:flex;align-items:center;justify-content:center;font-size:11px}
+.nt{padding:0 16px 12px;color:var(--mu);font-size:12px}
+.cbtn{display:block;width:calc(100% - 32px);margin:0 16px 16px;padding:11px;border:2px solid var(--ln);border-radius:10px;font-size:13px;font-weight:800;cursor:pointer;background:transparent;color:var(--mu);transition:all .2s}
+.cbtn:hover{border-color:var(--bl2);color:#fff}
+.cbtn.done{background:var(--or);border-color:var(--or);color:var(--bl)}
+.mat{margin:20px 16px 32px;background:var(--card);border:1px solid var(--ln);border-top:4px solid var(--or);border-radius:var(--r);padding:26px;text-align:center}
+.mat .big{font-size:42px}
+.mat h2{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:30px;letter-spacing:1px;margin:6px 0}
+.mat p{color:var(--mu);font-size:14px;margin-bottom:18px}
+.btn{display:inline-block;background:var(--or);color:var(--bl);font-weight:900;text-decoration:none;padding:13px 24px;border-radius:12px}
+.btn:hover{background:var(--or2)}
+footer{text-align:center;padding:22px 16px 40px;font-size:11px;color:#51647a;border-top:1px solid #16222f}
+footer b{color:var(--or)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div id="cb"><div class="cbl">Progresso</div><div class="cbd" id="pc">0%</div><div class="pt"><div class="pf" id="pf"></div></div><div class="cbl" id="pn">0/0</div></div>
+<div class="hero"><div class="hi">
+<div class="logo" aria-hidden="true">DS</div>
+<h1>Onboarding <em>Ciência de dados</em></h1>
+<p class="hsub">Seu plano de estudos para a prova técnica</p>
+<div class="hs"><div class="hst"><b id="s1">0</b>módulos</div><div class="hst"><b id="s2">0</b>tópicos</div><div class="hst"><b id="s3">0</b>vídeos</div><div class="hst"><b id="s4">0</b>concluídos</div></div>
+</div></div>
+<div class="tabs" role="tablist"><button role="tab" id="t1" aria-selected="true">📚 Plano de estudos</button><button role="tab" id="t2" aria-selected="false">🗂️ Materiais complementares</button></div>
+<main class="w">
+<section id="p1">
+<div class="sl">Escolha um módulo</div><div class="sg" id="sg"></div>
+<div id="det"><div class="shdr" id="shdr"></div><div id="tl"></div></div>
+</section>
+<section id="p2" hidden><div class="mat"><div class="big">🗂️</div><h2>Materiais complementares</h2><p>Pasta compartilhada com materiais de apoio para o seu estudo.</p>
+<a class="btn" href="https://drive.google.com/drive/folders/1BP6v1gYa2oK3oF7_2vsakEHW44wkO6s1?usp=share_link" target="_blank" rel="noopener">Abrir pasta no Google Drive</a></div></section>
+</main>
+<footer>Onboarding <b>Ciência de dados</b> · bons estudos!</footer>
+<script>
+var D=[
+["Programação (Python ou R)",["Fluência na sintaxe básica","Métodos e pacotes para leitura e escrita de dados","Pacotes de machine learning: Python (sklearn) · R (caret, mlr)"]],
+["Estatística Básica",["Variáveis aleatórias contínuas e discretas|_nTTJaXLA1k","Função densidade de probabilidade e distribuição acumulada|zNziUptt5MU pYxNSUDSFH4","Propriedades: média, moda e mediana|2KjlM-5FVqA 5ctWgFOizkQ vikkiwjQqfU","Propriedades: quartis|jdgmXWThWUw IFKQLDmRK0Y","Propriedades: variância|SzZ6GpcfoQY EuBBz3bI-aA qtaqvPAeEJY","Testes de hipóteses|0oc49DyA3hU 5koKb5B_YWo uH3CCIoGbog vemZtEM63GY JQc3yx0-Q9E TqOeMYtOc1w A82brFpdr9g XNgt7F6FqDU","Principais distribuições: Normal, Bernoulli, Binomial, Uniforme, Poisson, Geométrica|oI3hZJqXJuc XLCWeSVzHUU rzFX5NWojp0 5EyJARJ6bo4 vjtFJxHo2Tw 9mMoL0yZqa0 J8jNoF-K8E8"]],
+["Álgebra",["Álgebra (conteúdo exato não identificado nas fotos)|-as-EJN01g0 ZTt9gsGcdDo CqLGvwi-5Pc"]],
+["Data Prep",["Tratamento de missings|FPvMBl8LvGA","Tratamento de outliers|FPvMBl8LvGA o3uTAZyROI8","Categorização de variáveis contínuas e discretas|589nCGeWG1w","PCA|FgakZw6K1QQ HMOI_lkzW08","Correlação/associação entre dados contínuos e entre dados discretos|TA5UJYRyju0 xZ_z8KWkhXE","Seleção de variáveis|K-z1CtBlCW8 4RGT2YRHERY fouriZn4XyQ wpNl-JwwplA"]],
+["Classificação",["Árvore de classificação (e regressão)|4HwFrWAULkk pPWxZpSkt1s 7VeUPuFGJHk _L39rN6gz7Y wpNl-JwwplA g9c66TUylZ4 D0efHEJsfHo","Random forest|Xz0x-8-cgaQ N4ZQQqyIf6k J4Wdy0Wc_xQ mIlw5j3WyVk","Boosting: Gradient Boosting, AdaBoost, etc.|3CC4N4z3GJc 2xudPOBz-vs jxuNLH5dXCs StWY5QWMXCw LsK-xG1cLYA OtD8wVaFm6E 8b1JEDvenQU ZVFeW798-2I oRrKeUCEbq8 GrJP9FLV3FE KXOTSkPL2X4 3Bg2XRFOTzg","Regressão logística|Pk7cHs9H1OY yIYKR4sgzI8 vN5cNN2-HWE Dn6b9fCIUpM ARfXDSkQf1Y XepXtl9YKwc 4jRBRDbJemM QBVzZBsif20","KNN|HVXime0nQeI","Naive Bayes (Gaussiano x Bernoulli)|ahJks3rmK34 O2L2Uv9pdDA _IgyaD7vOOA 9wCnvr7Xw4E 7ArmBVF2dCs zITIFTsivN8","Redes neurais|CqOfi41LfDw HMOI_lkzW08","SVM|Toet3EiSFcM","Métricas de avaliação|ImWgtWmP61s fSytzGwwBVw sunUKFXMHGk V1QWx3KZ9AA oB6vEx11vZU LhXiEDrt418 ELN-V6Gnjs4"]],
+["Regressão",["Regressão linear|IZcDceAjFWk Gv9_4yMHFhI aFDOzpTeg0s PaFPbb66DxQ 2AQKmw14mHM","Regularização L1 e L2|NGf0voTMlcs Q81RR3yKn30 1dKRdX9bfIo","Árvore de regressão|@Vídeos junto com Árvore de classificação","Análise de resíduos|JC56jS2gVUE","Modelos lineares generalizados (GLM)|MG7TwOzJT6E"]],
+["Agrupamento",["K-means / K-medoids|4b5d3muPQmA","DBSCAN|RDZUdRSDOok","Algoritmos hierárquicos|7xHsRkOdVwo","Definição do número de clusters (elbow, silhueta, distância intra-cluster)|wW1tgWtkj4I","Gaussian Mixture Models (GMM)|wT2yLNUfyoM"]],
+["Banco de Dados",["Modelo relacional","Sintaxe de SQL","Álgebra relacional: join, group by, order by, etc.","Chaves primárias, secundárias e estrangeiras"]],
+["IA Generativa",["Conceitos fundamentais de IA Generativa e de NLP","Arquitetura transformer","In-Context Learning","RAGs e bancos de dados vetoriais","Técnicas de engenharia de prompt","Técnicas de treinamento e fine-tuning","Quantization","Embeddings","RLHF","Safeguards e guardrails"]],
+["Pesquisa Operacional",["Programação Linear: mix de produção, mistura, transporte; solução gráfica e Simplex","Programação Inteira: variáveis inteiras e binárias, relaxação linear, arredondamento, branch-and-bound","MIP (Mixed Integer Program): o que é; GAP e Best Bound"]]
+];
+var E=["💻","📊","➗","🧹","🎯","📈","🧩","🗄️","🤖","⚙️"],K="onb-cd2-",S={},aS=0,tot=0,nv=0;
+try{S=JSON.parse(localStorage.getItem(K)||"{}")}catch(e){}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+D.forEach(function(s){s[1].forEach(function(t){tot++;var v=t.split("|")[1];if(v&&v[0]!="@")nv+=v.split(" ").length})});
+s1.textContent=D.length;s2.textContent=tot;s3.textContent=nv;
+function cnt(i){var d=0;D[i][1].forEach(function(_,j){if(S[i+"-"+j])d++});return d}
+function stats(){var c=0;D.forEach(function(_,i){c+=cnt(i)});var p=Math.round(c/tot*100);
+pc.textContent=p+"%";pf.style.width=p+"%";pn.textContent=c+"/"+tot;s4.textContent=c}
+function grid(){sg.innerHTML="";D.forEach(function(s,i){var c=cnt(i),n=s[1].length,b=document.createElement("button");
+b.className="sb"+(aS==i?" active":"")+(c==n?" full":"");
+b.innerHTML='<div class="se">'+E[i]+'</div><div class="sn">Módulo '+(i+1)+'</div><div class="snm">'+s[0]+'</div><div class="mini"><i style="width:'+c/n*100+'%"></i></div><div class="sd">'+c+'/'+n+'</div>';
+b.onclick=function(){aS=i;grid();detail();det.scrollIntoView({block:"start"})};sg.appendChild(b)})}
+function detail(){var s=D[aS],c=cnt(aS);
+shdr.innerHTML='<div class="stag">Módulo '+(aS+1)+' de '+D.length+'</div><h2>'+E[aS]+' '+s[0]+'</h2><div class="sbadge">'+c+' de '+s[1].length+' tópicos concluídos</div>';
+var h="";s[1].forEach(function(it,j){var p=it.split("|"),id=aS+"-"+j,ok=!!S[id];
+h+='<div class="tc'+(ok?' ok':'')+'"><div class="th"><div class="nb">'+(ok?'✓':j+1)+'</div><h3>'+p[0]+'</h3></div>';
+if(p[1]){if(p[1][0]=="@")h+='<div class="nt">'+p[1].slice(1)+'</div>';else{h+='<div class="vl">';p[1].split(" ").forEach(function(v,x){h+='<a class="vi" href="https://youtu.be/'+v+'" target="_blank" rel="noopener"><span class="vt">▶</span>Vídeo '+(x+1)+'</a>'});h+='</div>'}}
+h+='<button class="cbtn'+(ok?' done':'')+'" data-k="'+id+'">'+(ok?'Tópico concluído ✓':'Marcar como concluído')+'</button></div>'});
+tl.innerHTML=h}
+tl.addEventListener("click",function(e){var b=e.target.closest(".cbtn");if(!b)return;S[b.dataset.k]=!S[b.dataset.k];save();stats();grid();detail()});
+[t1,t2].forEach(function(t,i){t.onclick=function(){t1.setAttribute("aria-selected",i==0);t2.setAttribute("aria-selected",i==1);p1.hidden=i!=0;p2.hidden=i!=1}});
+stats();grid();detail();
+</script>
+</body>
+</html>
